@@ -91,9 +91,9 @@
     }
 
     .brand-icon::before {
-      content: "�;
+      content: "🔒";
       font-size: 17px;
-    
+    }
 
     .nav-links {
       display: flex;
@@ -296,4 +296,900 @@
 
     .card {
       background: rgba(255,255,255,0.06);
-      border: 1px solid var(--li)}�"}
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      margin-bottom: 13px;
+    }
+
+    .app-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .app-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), #111);
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-info strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .app-info span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .toggle {
+      width: 42px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--blue);
+      position: relative;
+    }
+
+    .toggle::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: white;
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      border-radius: 50%;
+    }
+
+    .nfc-card {
+      margin-top: 28px;
+      height: 150px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(59,130,246,0.95), rgba(5,5,5,0.9)),
+        #111;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 60px rgba(59,130,246,0.22);
+    }
+
+    .nfc-card small {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .nfc-card strong {
+      font-size: 24px;
+      letter-spacing: -0.05em;
+    }
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 44px;
+    }
+
+    .label {
+      color: var(--blue2);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 66px);
+      letter-spacing: -0.07em;
+      line-height: 0.95;
+      margin-bottom: 18px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .problem-card {
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      min-height: 240px;
+    }
+
+    .problem-card span {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .problem-card h3 {
+      font-size: 24px;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .problem-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: rgba(59,130,246,0.14);
+      border: 1px solid rgba(96,165,250,0.25);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--blue2);
+      font-size: 20px;
+    }
+
+    .step h3 {
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 17px;
+      background: rgba(59,130,246,0.12);
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      font-size: 25px;
+    }
+
+    .feature h3 {
+      font-size: 25px;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .comparison {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-cell {
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .comparison-cell:last-child {
+      border-right: none;
+    }
+
+    .comparison-head {
+      color: var(--text);
+      font-weight: 900;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .good {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    .bad {
+      color: #b9b9b9;
+    }
+
+    .demo {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .demo-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .tap-zone {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle, rgba(59,130,246,0.18), transparent 55%),
+        var(--card);
+    }
+
+    .tap-ring {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 1px solid rgba(96,165,250,0.4);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .tap-ring::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(96,165,250,0.25);
+      border-radius: 50%;
+    }
+
+    .tap-ring::after {
+      content: "";
+      position: absolute;
+      inset: 58px;
+      border: 1px solid rgba(96,165,250,0.2);
+      border-radius: 50%;
+    }
+
+    .tap-center {
+      width: 92px;
+      height: 92px;
+      border-radius: 30px;
+      background: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      box-shadow: 0 0 70px rgba(59,130,246,0.55);
+    }
+
+    .demo-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .demo-item {
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .demo-item strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .demo-item p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .price-card.highlight {
+      background:
+        radial-gradient(circle at top, rgba(59,130,246,0.22), transparent 45%),
+        var(--card);
+      border-color: rgba(96,165,250,0.35);
+    }
+
+    .price-card h3 {
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 48px;
+      letter-spacing: -0.07em;
+      margin: 18px 0;
+      font-weight: 900;
+    }
+
+    .price span {
+      font-size: 15px;
+      color: var(--muted);
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+
+    .price-card p {
+      color: var(--muted);
+      margin: 12px 0 24px;
+      line-height: 1.6;
+    }
+
+    .price-card .btn {
+      width: 100%;
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 200px;
+      overflow: hidden;
+    }
+
+    .faq-item.open p {
+      max-height: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 50px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .demo {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .comparison-cell:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="brand">
+          <div class="brand-icon"></div>
+          TapLock
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <button class="nav-button">Get Started</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">
+          <div class="dot"></div>
+          Now available for Android & iOS
+        </div>
+        <h1>
+          Secure your apps with a
+          <span class="gradient-text">tap</span>
+        </h1>
+        <p class="hero-copy">
+          TapLock uses NFC technology to let you lock and unlock apps instantly. No passwords. No codes. Just tap your phone against your card and you're in.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">Download for Free</button>
+          <button class="btn btn-secondary">Watch Demo</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>50K+</strong>
+            <span>Active Users</span>
+          </div>
+          <div class="stat">
+            <strong>99.9%</strong>
+            <span>Uptime</span>
+          </div>
+          <div class="stat">
+            <strong>0</strong>
+            <span>Security Breaches</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container">
+        <div class="phone-wrap">
+          <div class="phone-glow"></div>
+          <div class="phone">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="lock-big">🔒</div>
+              <div class="phone-title">TapLock</div>
+              <div class="phone-sub">Tap your NFC card to unlock</div>
+
+              <div class="card">
+                <div class="app-row">
+                  <div class="app-icon"></div>
+                  <div class="app-info">
+                    <strong>Messages</strong>
+                    <span>Locked</span>
+                  </div>
+                  <div class="toggle"></div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="app-row">
+                  <div class="app-icon"></div>
+                  <div class="app-info">
+                    <strong>Banking</strong>
+                    <span>Locked</span>
+                  </div>
+                  <div class="toggle"></div>
+                </div>
+              </div>
+
+              <div class="nfc-card">
+                <small>CARD ID</small>
+                <strong>••••••••</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Features</div>
+          <h2>Everything you need for app security</h2>
+          <p class="section-text">
+            TapLock combines the latest NFC technology with military-grade encryption to keep your apps secure.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem-card">
+            <span>🔐</span>
+            <h3>Military Encryption</h3>
+            <p>AES-256 encryption ensures your apps stay secure, even if your phone is stolen.</p>
+          </div>
+          <div class="problem-card">
+            <span>⚡</span>
+            <h3>Instant Access</h3>
+            <p>Unlock your apps in milliseconds with a single tap of your NFC card.</p>
+          </div>
+          <div class="problem-card">
+            <span>🛡️</span>
+            <h3>Privacy First</h3>
+            <p>Your data never leaves your device. We don't store any app data on our servers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">How It Works</div>
+          <h2>Simple, secure, seamless</h2>
+          <p class="section-text">
+            Get started in minutes. TapLock works with any NFC-enabled phone.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Set Up Your Card</h3>
+              <p>Initialize your NFC card with TapLock and set a master PIN for extra security.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Choose Your Apps</h3>
+              <p>Select which apps you want to protect with NFC. You can add or remove apps anytime.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Tap to Unlock</h3>
+              <p>Hold your NFC card near your phone to instantly unlock your protected apps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Advanced Features</div>
+          <h2>Built for power users</h2>
+          <p class="section-text">
+            Beyond basic app locking, TapLock offers advanced security features.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">🔄</div>
+            <h3>Multi-Card Support</h3>
+            <p>Link multiple NFC cards to your account and use them interchangeably.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Activity Logs</h3>
+            <p>Track when your apps were accessed with detailed timestamps and analytics.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">👥</div>
+            <h3>Family Sharing</h3>
+            <p>Share protected apps with family members while maintaining individual access logs.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⏰</div>
+            <h3>Time-Based Locks</h3>
+            <p>Automatically lock your sensitive apps during specific times of day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Comparison</div>
+          <h2>TapLock vs. The Rest</h2>
+        </div>
+
+        <div class="comparison">
+          <div class="comparison-row">
+            <div class="comparison-cell comparison-head">Feature</div>
+            <div class="comparison-cell comparison-head">TapLock</div>
+            <div class="comparison-cell comparison-head">Competitors</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">NFC Technology</div>
+            <div class="comparison-cell good">✓ Yes</div>
+            <div class="comparison-cell bad">✗ No</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">Zero Passwords</div>
+            <div class="comparison-cell good">✓ Yes</div>
+            <div class="comparison-cell bad">✗ No</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">Military Encryption</div>
+            <div class="comparison-cell good">✓ Yes</div>
+            <div class="comparison-cell bad">✗ No</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">Activity Logs</div>
+            <div class="comparison-cell good">✓ Yes</div>
+            <div class="comparison-cell good">✓ Yes</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">Mobile App</div>
+            <div class="comparison-cell good">✓ Yes</div>
+            <div class="comparison-cell good">✓ Yes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Try It Now</div>
+          <h2>See TapLock in action</h2>
+        </div>
+
+        <div class="demo">
+          <div class="demo-card">
+            <div class="tap-zone">
+              <div class="tap-ring">
+                <div class="tap-center">📱</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="demo-list">
+              <div class="demo-item">
+                <strong>What happened?</strong>
+                <p>You unlocked Messages with your NFC card. The unlock was logged and encrypted.</p>
+              </div>
+              <div class="demo-item">
+                <strong>How long did it take?</strong>
+                <p>Less than 100ms. That's faster than a fingerprint scanner.</p>
+              </div>
+              <div class="demo-item">
+                <strong>Is it secure?</strong>
+                <p>Yes. Your data is encrypted with AES-256, the same standard used by banks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Pricing</div>
+          <h2>Plans for everyone</h2>
+          <p class="section-text">
+            Start free, upgrade when you need advanced features.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Free</h3>
+            <div class="price">$0<span>/month</span></div>
+            <p>Perfect for trying TapLock</p>
+            <button class="btn btn-secondary">Get Started</button>
+            <p style="margin-top: 20px; color: var(--muted); font-size: 13px;">
+              Up to 5 protected apps<br/>
+              Basic activity logs
+            </p>
+          </div>
+          <div class="price-card highlight">
+            <h3>Pro</h3>
+            <div class="price">$9.99<span>/month</span></div>
+            <p>For serious security</p>
+            <button class="btn btn-primary">Subscribe Now</button>
+            <p style="margin-top: 20px; color: var(--muted); font-size: 13px;">
+              Unlimited protected apps<br/>
+              Advanced analytics<br/>
+              Priority support
+            </p>
+          </div>
+          <div class="price-card">
+            <h3>Business</h3>
+            <div class="price">$99<span>/month</span></div>
+            <p>For teams and enterprises</p>
+            <button class="btn btn-secondary">Contact Sales</button>
+            <p style="margin-top: 20px; color: var(--muted); font-size: 13px;">
+              Team management<br/>
+              Custom integrations<br/>
+              24/7 dedicated support
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">FAQ</div>
+          <h2>Questions? We have answers</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h3>Do I need a special NFC card?</h3>
+            <p>No, TapLock works with any NFC Type 2, 3, or 4 card. We recommend our branded cards for the best experience.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if I lose my NFC card?</h3>
+            <p>You can instantly deactivate your card in the app and link a new one. Your apps will remain locked until you authenticate with your master PIN.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is my data safe?</h3>
+            <p>Absolutely. TapLock uses AES-256 encryption, the same standard used by governments and banks. Your data never leaves your device.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Which phones support TapLock?</h3>
+            <p>Any phone with NFC capability. That includes most modern Android phones and all iPhone 12 models and newer.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I use multiple cards?</h3>
+            <p>Yes, the Pro plan allows up to 5 cards. Business accounts have unlimited cards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Download</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Community</a>
+          <a href="#">API Docs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 TapLock. All rights reserved.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Twitter</a>
+          <a href="#">GitHub</a>
+          <a href="#">Discord</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
