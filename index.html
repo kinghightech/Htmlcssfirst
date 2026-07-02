@@ -4,33 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TapLock</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    }
-
-    .container {
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 32px;
-      font-weight: 800;
       color: #fff;
-      margin-bottom: 40px;
-      letter-spacing: -1px;
+       font-family: "Space Grotesk", sans-serif;
+      overflow-x: hidden;
     }
 
     nav {
@@ -43,6 +31,9 @@
       justify-content: center;
       flex-wrap: wrap;
       padding: 24px 16px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      z-index: 10;
     }
 
     nav a {
@@ -50,26 +41,229 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
-      transition: color 0.2s;
+      transition: 0.2s;
     }
 
     nav a:hover {
       color: #fff;
-      background-color:aqua;
+      background-color: #007aff;
       padding: 4px 8px;
       border-radius: 4px;
     }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+
+    .hero {
+      max-width: 760px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+    }
+
+    .badge {
+      display: inline-block;
+      color: #7cc7ff;
+      background: rgba(0, 122, 255, 0.12);
+      border: 1px solid rgba(0, 122, 255, 0.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 64px;
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .blue {
+      color: #007aff;
+    }
+
+    .description {
+      color: #bdbdbd;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 54px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #007aff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #2490ff;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #111;
+      color: #fff;
+      border: 1px solid #252525;
+    }
+
+    .btn-secondary:hover {
+      background: #191919;
+      transform: translateY(-2px);
+    }
+
+    
+
+   
+
+    .lock {
+      --lock-color: #007aff;
+      position: relative;
+      width: 92px;
+      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lock-shackle {
+      width: 52px;
+      height: 44px;
+      border: 6px solid var(--lock-color);
+      border-bottom: none;
+      border-radius: 30px 30px 0 0;
+      margin: 0 auto 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lock-body {
+      width: 92px;
+      height: 78px;
+      border: 6px solid var(--lock-color);
+      border-radius: 18px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lock-keyhole {
+      width: 10px;
+      height: 22px;
+      background: var(--lock-color);
+      border-radius: 999px;
+      position: absolute;
+      left: 50%;
+      top: 24px;
+      transform: translateX(-50%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mini-text {
+      color: #777;
+      font-size: 14px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        gap: 20px;
+        padding: 20px 14px;
+      }
+
+      h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .phone-card {
+        width: 230px;
+        height: 310px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <nav>
-    <a href="#download">Download</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="download.html">Download</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
+
   <div class="container">
-    <div class="logo">TapLock</div>
+    <div class="hero">
+
+      <div class="logo">TapLock</div>
+
+      <div>NFC-powered screen time control</div>
+
+      <h1>
+        Tap your card.<br>
+        <span class="blue">Lock in.</span>
+      </h1>
+
+      <p class="description">
+        TapLock helps you block distracting apps with one simple NFC tap.
+        No overcomplicated menus, no easy bypasses, and no ridiculous monthly price.
+        Just tap your card and stay focused.
+      </p>
+
+      <div class="buttons">
+        <a href="download.html" class="btn btn-primary">Download TapLock</a>
+        <a href="about.html" class="btn btn-secondary">Learn More</a>
+      </div>
+
+      <div class="phone-card">
+        <div class="lock">
+          <div class="lock-shackle"></div>
+          <div class="lock-body">
+            <div class="lock-keyhole"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mini-text">
+        Built for people who actually want to stay locked in.
+      </p>
+
+    </div>
   </div>
-  
+
 </body>
 </html>
