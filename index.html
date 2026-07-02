@@ -7,17 +7,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       width: 100%;
       min-height: 100vh;
       background: #000;
       color: #fff;
-       font-family: "Space Grotesk", sans-serif;
+      font-family: "Space Grotesk", sans-serif;
       overflow-x: hidden;
     }
 
@@ -142,9 +149,18 @@
       transform: translateY(-2px);
     }
 
-    
-
-   
+    .phone-card {
+      width: 260px;
+      min-height: 330px;
+      margin: 0 auto;
+      background: #050505;
+      border: 2px solid #222;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 36px;
+    }
 
     .lock {
       --lock-color: #007aff;
@@ -195,6 +211,408 @@
       margin-top: 24px;
     }
 
+    .main-content {
+      width: 100%;
+      background: #000;
+    }
+
+    .section {
+      width: 100%;
+      padding: 90px 20px;
+      border-top: 1px solid #151515;
+    }
+
+    .section-inner {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      color: #0d00ff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .section-text {
+      color: #b5b5b5;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 680px;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    .center-text .section-text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 44px;
+    }
+
+    .card {
+      background: #070707;
+      border: 1px solid #202020;
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .card-number {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient( #ff00f2, #0d00ff);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+
+    .card-title {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .plain-box {
+      background: #050505;
+      border: 1px solid #1c1c1c;
+      border-radius: 16px;
+      padding: 34px;
+    }
+
+    .plain-box h3 {
+      font-size: 25px;
+      margin-bottom: 14px;
+    }
+
+    .plain-box p {
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 26px;
+    }
+
+    .feature-list li {
+      color: #cfcfcf;
+      font-size: 16px;
+      padding: 15px 0;
+      border-bottom: 1px solid #1c1c1c;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .simple-phone {
+      width: 280px;
+      min-height: 520px;
+      background: #050505;
+      border: 2px solid #222;
+      border-radius: 34px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .phone-top {
+      width: 90px;
+      height: 8px;
+      background: #222;
+      border-radius: 8px;
+      margin: 0 auto 28px;
+    }
+
+    .phone-screen-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .phone-screen-subtitle {
+      color: #888;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    .app-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border: 1px solid #202020;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      background: #090909;
+    }
+
+    .app-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .app-icon {
+      width: 34px;
+      height: 34px;
+      background: #111;
+      border: 1px solid #252525;
+      border-radius: 8px;
+    }
+
+    .app-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .app-status {
+      color: #007aff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tap-area {
+      border: 1px dashed #333;
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .tap-area-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .tap-area-text {
+      color: #888;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 42px;
+      background: #050505;
+      border: 1px solid #1f1f1f;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .compare-table th {
+      text-align: left;
+      padding: 18px;
+      background: #0b0b0b;
+      color: #fff;
+      font-size: 15px;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .compare-table td {
+      padding: 18px;
+      color: #b5b5b5;
+      font-size: 15px;
+      line-height: 1.5;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .yes {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .no {
+      color: #777;
+    }
+
+    .quote-box {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 16px;
+      padding: 44px 30px;
+    }
+
+    .quote {
+      font-size: 28px;
+      line-height: 1.35;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+
+    .quote-small {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .faq {
+      margin-top: 42px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #060606;
+      border: 1px solid #202020;
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .faq-question {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .faq-answer {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .cta {
+      text-align: center;
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 18px;
+      padding: 56px 24px;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: #aaa;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      width: 100%;
+      padding: 34px 20px;
+      border-top: 1px solid #151515;
+      background: #000;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-copy {
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .split-section {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .quote {
+        font-size: 23px;
+      }
+    }
+
     @media (max-width: 700px) {
       nav {
         gap: 20px;
@@ -213,6 +631,34 @@
       .phone-card {
         width: 230px;
         height: 310px;
+      }
+
+      .section {
+        padding: 70px 18px;
+      }
+
+      .section-title {
+        font-size: 31px;
+      }
+
+      .simple-phone {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .compare-table th,
+      .compare-table td {
+        padding: 14px;
+        font-size: 14px;
+      }
+
+      .cta h2 {
+        font-size: 31px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -264,6 +710,375 @@
 
     </div>
   </div>
+
+  <main class="main-content">
+
+    <section class="section">
+      <div class="section-inner center-text">
+        <div class="section-label">How it works</div>
+
+        <h2 class="section-title">
+          A simple focus system that does not need to be complicated.
+        </h2>
+
+        <p class="section-text">
+          TapLock is built around one idea: starting a focus session should be quick.
+          Instead of opening a bunch of settings every time, you use an NFC card to
+          turn your block on or off.
+        </p>
+
+        <div class="grid-3">
+
+          <div class="card">
+            <div class="card-number">1</div>
+
+            <h3 class="card-title">
+              Choose your apps
+            </h3>
+
+            <p class="card-text">
+              Pick the apps that usually distract you when you are trying to work,
+              study, build, or just stay off your phone.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">2</div>
+
+            <h3 class="card-title">
+              Tap your card
+            </h3>
+
+            <p class="card-text">
+              When you are ready to focus, tap your NFC card and TapLock starts
+              blocking the apps you selected.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">3</div>
+
+            <h3 class="card-title">
+              Stay locked in
+            </h3>
+
+            <p class="card-text">
+              Keep your phone nearby without falling into the same loop of opening
+              the same apps over and over again.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner split-section">
+
+        <div>
+          <div class="section-label">Why TapLock</div>
+
+          <h2 class="section-title">
+            Screen time tools should be harder to bypass.
+          </h2>
+
+          <p class="section-text">
+            A lot of focus apps sound good until you realize how easy they are to
+            turn off. TapLock makes the lock feel more physical by using an NFC card
+            instead of only relying on another button inside your phone.
+          </p>
+
+          <ul class="feature-list">
+            <li>Use a real NFC card to control your focus session.</li>
+            <li>Block the apps that waste the most time.</li>
+            <li>Keep the design simple and easy to understand.</li>
+            <li>No messy setup or confusing menus.</li>
+            <li>Made for students, builders, and anyone trying to focus.</li>
+          </ul>
+        </div>
+
+        <div class="simple-phone">
+          <div class="phone-top"></div>
+
+          <div class="phone-screen-title">
+            TapLock
+          </div>
+
+          <div class="phone-screen-subtitle">
+            Your selected apps are locked. Tap your NFC card again when you are done.
+          </div>
+
+          <div class="app-row">
+            <div class="app-left">
+              <div class="app-icon"></div>
+              <div class="app-name">Social</div>
+            </div>
+
+            <div class="app-status">Locked</div>
+          </div>
+
+          <div class="app-row">
+            <div class="app-left">
+              <div class="app-icon"></div>
+              <div class="app-name">Videos</div>
+            </div>
+
+            <div class="app-status">Locked</div>
+          </div>
+
+          <div class="app-row">
+            <div class="app-left">
+              <div class="app-icon"></div>
+              <div class="app-name">Games</div>
+            </div>
+
+            <div class="app-status">Locked</div>
+          </div>
+
+          <div class="tap-area">
+            <div class="tap-area-title">
+              NFC card active
+            </div>
+
+            <div class="tap-area-text">
+              Keep your card nearby and use it when you want to start or stop a focus block.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+
+        <div class="center-text">
+          <div class="section-label">Built different</div>
+
+          <h2 class="section-title">
+            Not another overcomplicated screen time app.
+          </h2>
+
+          <p class="section-text">
+            TapLock keeps the main idea simple. Less clutter, less scrolling, and
+            less time spent inside the app itself.
+          </p>
+        </div>
+
+        <table class="compare-table">
+          <tr>
+            <th>Feature</th>
+            <th>TapLock</th>
+            <th>Typical focus apps</th>
+          </tr>
+
+          <tr>
+            <td>Physical NFC control</td>
+            <td class="yes">Yes</td>
+            <td class="no">Usually no</td>
+          </tr>
+
+          <tr>
+            <td>Simple setup</td>
+            <td class="yes">Yes</td>
+            <td class="no">Often too many steps</td>
+          </tr>
+
+          <tr>
+            <td>Made to reduce easy bypasses</td>
+            <td class="yes">Yes</td>
+            <td class="no">Depends on the app</td>
+          </tr>
+
+          <tr>
+            <td>Clean design</td>
+            <td class="yes">Yes</td>
+            <td class="no">Sometimes cluttered</td>
+          </tr>
+
+          <tr>
+            <td>Built around quick focus</td>
+            <td class="yes">Yes</td>
+            <td class="no">Not always</td>
+          </tr>
+        </table>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="grid-2">
+
+          <div class="plain-box">
+            <h3>
+              For studying
+            </h3>
+
+            <p>
+              Start a focus block before homework, studying, reading, or doing
+              anything that needs your attention for more than five minutes.
+            </p>
+          </div>
+
+          <div class="plain-box">
+            <h3>
+              For building
+            </h3>
+
+            <p>
+              Use TapLock when you are coding, designing, editing, or making
+              something and do not want your phone pulling you away every few minutes.
+            </p>
+          </div>
+
+          <div class="plain-box">
+            <h3>
+              For better habits
+            </h3>
+
+            <p>
+              TapLock gives you a small physical action before you unlock distractions,
+              which makes the habit feel more intentional.
+            </p>
+          </div>
+
+          <div class="plain-box">
+            <h3>
+              For everyday focus
+            </h3>
+
+            <p>
+              You do not need a huge productivity system. Sometimes you just need
+              a simple way to stop opening the same apps again and again.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="quote-box">
+          <p class="quote">
+            “TapLock is for the moment when you know you should not open that app,
+            but you probably will anyway.”
+          </p>
+
+          <p class="quote-small">
+            A simple tool to help you make the better choice faster.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+
+        <div class="center-text">
+          <div class="section-label">Questions</div>
+
+          <h2 class="section-title">
+            Quick answers.
+          </h2>
+
+          <p class="section-text">
+            Here are the basic things people usually want to know before using TapLock.
+          </p>
+        </div>
+
+        <div class="faq">
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              Do I need an NFC card?
+            </h3>
+
+            <p class="faq-answer">
+              Yes. TapLock is designed around using an NFC card so the lock feels
+              more physical and less like another easy button inside your phone.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What apps can I block?
+            </h3>
+
+            <p class="faq-answer">
+              You choose the distracting apps you want to block. The point is to
+              make your own focus setup based on what actually wastes your time.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              Is TapLock hard to set up?
+            </h3>
+
+            <p class="faq-answer">
+              No. The website and app are meant to be simple. Pick your apps,
+              connect your card, and use the tap when you want to lock in.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              Who is TapLock made for?
+            </h3>
+
+            <p class="faq-answer">
+              TapLock is made for students, creators, coders, builders, and anyone
+              who wants a cleaner way to stay away from distracting apps.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="cta">
+
+          <h2>
+            Ready to lock in?
+          </h2>
+
+          <p>
+            Download TapLock, set up your NFC card, and make your phone less
+            distracting when it matters.
+          </p>
+
+          <div class="buttons">
+            <a href="download.html" class="btn btn-primary">Download TapLock</a>
+            <a href="contact.html" class="btn btn-secondary">Contact</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-logo">TapLock</div>
+        <div class="footer-copy">NFC-powered screen time control.</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="download.html">Download</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
