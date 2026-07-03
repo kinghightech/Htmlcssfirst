@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Download | TapLock</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: "Space Grotesk", sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 24px 16px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      border-bottom: 1px solid #111;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background-color: #007aff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding-top: 90px;
+    }
+
+    .hero {
+      width: 100%;
+      padding: 100px 20px 70px;
+      border-bottom: 1px solid #151515;
+      text-align: center;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      color: #7cc7ff;
+      background: rgba(0, 122, 255, 0.12);
+      border: 1px solid rgba(0, 122, 255, 0.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      margin-bottom: 20px;
+    }
+
+    .blue {
+      color: #007aff;
+    }
+
+    .description {
+      color: #bdbdbd;
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      background: #007aff;
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .store-btn:hover {
+      background: #2490ff;
+      transform: translateY(-2px);
+    }
+
+    .store-btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .mini-text {
+      color: #777;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .gallery-section {
+      width: 100%;
+      padding: 80px 20px;
+    }
+
+    .gallery-inner {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-label {
+      color: #7cc7ff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 36px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 44px;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 10px 4px 24px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+      background: #222;
+      border-radius: 999px;
+    }
+
+    .gallery-frame {
+      flex: 0 0 auto;
+      width: 220px;
+      scroll-snap-align: center;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #222;
+      background: #050505;
+    }
+
+    .gallery-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .cta {
+      text-align: center;
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 18px;
+      padding: 56px 24px;
+      max-width: 1080px;
+      margin: 0 auto 90px;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      width: 100%;
+      padding: 34px 20px;
+      border-top: 1px solid #151515;
+      background: #000;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-copy {
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        gap: 20px;
+        padding: 20px 14px;
+      }
+
+      h1 {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .gallery-section {
+        padding: 60px 20px;
+      }
+
+      .gallery-frame {
+        width: 180px;
+      }
+
+      .cta h2 {
+        font-size: 27px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="download.html">Download</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="page">
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div class="badge">Available on the App Store</div>
+
+        <h1>
+          Get <span class="blue">TapLock</span>
+        </h1>
+
+        <p class="description">
+          Tap your NFC card, lock in, and stay focused. Download TapLock
+          for iPhone and set up your first block in a couple minutes.
+        </p>
+
+        <a href="https://apps.apple.com/us/app/taplock-card/id6785311278" class="store-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.9c0 26.5 4.9 54 14.6 82.4 13 37.9 60 130.7 109 129.2 25.6-.6 43.7-18.2 77-18.2 32.3 0 49 18.2 77.6 18.2 49.4-.7 91.9-85.2 104.3-123.2-66.3-31.2-67.8-91.5-67.8-93.6zm-62.9-171.4c27.6-32.9 25.1-62.9 24.3-73.6-24.4 1.4-52.6 16.9-68.6 35.9-17.6 20.3-28 45.5-25.8 72.3 25.9 2 49.9-11.4 70.1-34.6z"/>
+          </svg>
+          Download on the App Store
+        </a>
+
+        <p class="mini-text">
+          Free to download. Requires an iPhone with NFC and a TapLock card.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="gallery-inner">
+
+        <div class="section-label">A quick look</div>
+        <h2 class="section-title">See TapLock before you download it.</h2>
+
+        <div class="gallery">
+          <div class="gallery-frame">
+            <img src="screenshots/1.png" alt="Lock in with a tap — the TapLock scan screen ready to read your NFC card.">
+          </div>
+          <div class="gallery-frame">
+            <img src="screenshots/2.png" alt="No easy bypass — apps locked with a countdown until the block lifts.">
+          </div>
+          <div class="gallery-frame">
+            <img src="screenshots/3.png" alt="Track every win — screen time, streaks, and time saved this week.">
+          </div>
+          <div class="gallery-frame">
+            <img src="screenshots/4.png" alt="Learn and earn — milestones for staying locked in.">
+          </div>
+          <div class="gallery-frame">
+            <img src="screenshots/5.png" alt="Set it up your way — settings for your profile, permissions, and blocked apps.">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to lock in?</h2>
+      <p>
+        Download TapLock, pair your NFC card, and make your phone a little
+        less distracting when it matters.
+      </p>
+
+      <a href="https://apps.apple.com/us/app/taplock-card/id6785311278" class="store-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+          <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.9c0 26.5 4.9 54 14.6 82.4 13 37.9 60 130.7 109 129.2 25.6-.6 43.7-18.2 77-18.2 32.3 0 49 18.2 77.6 18.2 49.4-.7 91.9-85.2 104.3-123.2-66.3-31.2-67.8-91.5-67.8-93.6zm-62.9-171.4c27.6-32.9 25.1-62.9 24.3-73.6-24.4 1.4-52.6 16.9-68.6 35.9-17.6 20.3-28 45.5-25.8 72.3 25.9 2 49.9-11.4 70.1-34.6z"/>
+        </svg>
+        Download on the App Store
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-logo">TapLock</div>
+        <div class="footer-copy">NFC-powered screen time control.</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
