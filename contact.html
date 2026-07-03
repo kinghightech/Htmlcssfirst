@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | TapLock</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: "Space Grotesk", sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 24px 16px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      border-bottom: 1px solid #111;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background-color: #007aff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding-top: 90px;
+    }
+
+    .hero {
+      width: 100%;
+      padding: 120px 20px 80px;
+      border-bottom: 1px solid #151515;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 34px;
+      letter-spacing: -1px;
+    }
+
+    .small-heading {
+      color: #007aff;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 62px;
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .blue {
+      color: #007aff;
+    }
+
+    .hero-text {
+      max-width: 660px;
+      margin: 0 auto;
+      color: #bdbdbd;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .contact-section {
+      width: 100%;
+      padding: 80px 20px;
+      border-bottom: 1px solid #151515;
+    }
+
+    .contact-inner {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 16px;
+      padding: 36px;
+    }
+
+    .contact-card h2 {
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .contact-card p {
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+
+    .email-box {
+      background: #090909;
+      border: 1px solid #252525;
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 24px;
+    }
+
+    .email-label {
+      color: #777;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .email-link {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-word;
+      transition: 0.2s;
+    }
+
+    .email-link:hover {
+      color: #007aff;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #007aff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #2490ff;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #111;
+      color: #fff;
+      border: 1px solid #252525;
+    }
+
+    .btn-secondary:hover {
+      background: #191919;
+      transform: translateY(-2px);
+    }
+
+    .info-card {
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .info-card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .info-list li {
+      color: #cfcfcf;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 15px 0;
+      border-bottom: 1px solid #1c1c1c;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .section {
+      width: 100%;
+      padding: 80px 20px;
+      border-bottom: 1px solid #151515;
+    }
+
+    .section-inner {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .section-text {
+      color: #aaa;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .card {
+      background: #060606;
+      border: 1px solid #202020;
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .card-number {
+      width: 38px;
+      height: 38px;
+      background: #007aff;
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .message-section {
+      width: 100%;
+      padding: 80px 20px;
+      border-bottom: 1px solid #151515;
+    }
+
+    .message-inner {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .message-box {
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 16px;
+      padding: 38px;
+    }
+
+    .message-box h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .message-box p {
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .template {
+      background: #090909;
+      border: 1px solid #242424;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .template-title {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .template-line {
+      color: #bdbdbd;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .template-line strong {
+      color: #fff;
+    }
+
+    .faq-section {
+      width: 100%;
+      padding: 80px 20px;
+      border-bottom: 1px solid #151515;
+    }
+
+    .faq-inner {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .faq-header h2 {
+      font-size: 40px;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .faq-header p {
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #060606;
+      border: 1px solid #202020;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .last-section {
+      width: 100%;
+      padding: 80px 20px;
+    }
+
+    .last-inner {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+      background: #050505;
+      border: 1px solid #202020;
+      border-radius: 18px;
+      padding: 52px 24px;
+    }
+
+    .last-inner h2 {
+      font-size: 38px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .last-inner p {
+      color: #aaa;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      width: 100%;
+      padding: 34px 20px;
+      border-top: 1px solid #151515;
+      background: #000;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .footer-copy {
+      color: #666;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 950px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        gap: 20px;
+        padding: 20px 14px;
+      }
+
+      .hero {
+        padding: 90px 18px 70px;
+      }
+
+      h1 {
+        font-size: 44px;
+        letter-spacing: -2px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .contact-section,
+      .section,
+      .message-section,
+      .faq-section,
+      .last-section {
+        padding: 65px 18px;
+      }
+
+      .contact-card,
+      .info-card,
+      .message-box {
+        padding: 26px;
+      }
+
+      .contact-card h2 {
+        font-size: 30px;
+      }
+
+      .email-link {
+        font-size: 18px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .last-inner h2 {
+        font-size: 30px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="download.html">Download</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div class="logo">
+          TapLock
+        </div>
+
+        <div class="small-heading">
+          Contact
+        </div>
+
+        <h1>
+          Need help with <span class="blue">TapLock?</span>
+        </h1>
+
+        <p class="hero-text">
+          If you have a question about the app, NFC setup, downloading TapLock,
+          or anything else, you can reach out through email.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-inner">
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+
+            <h2>
+              Reach out by email.
+            </h2>
+
+            <p>
+              The easiest way to get help with TapLock is to send an email.
+              Include what issue you are running into and what device you are using
+              so it is easier to understand the problem.
+            </p>
+
+            <div class="email-box">
+              <div class="email-label">
+                Support email
+              </div>
+
+              <a class="email-link" href="mailto:aahish.abbani@icloud.com">
+                aahish.abbani@icloud.com
+              </a>
+            </div>
+
+            <div class="buttons">
+              <a class="btn btn-primary" href="mailto:aahish.abbani@icloud.com">
+                Send Email
+              </a>
+
+              <a class="btn btn-secondary" href="index.html">
+                Back Home
+              </a>
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <h3>
+              What to include
+            </h3>
+
+            <p style="color: #aaa; font-size: 15px; line-height: 1.6;">
+              A clear email makes it much easier to help you quickly.
+            </p>
+
+            <ul class="info-list">
+              <li>Your iPhone model if the issue is device related.</li>
+              <li>What you were trying to do in TapLock.</li>
+              <li>What happened instead.</li>
+              <li>Whether the issue is with NFC, app blocking, or setup.</li>
+              <li>A screenshot or screen recording if it helps explain the problem.</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+
+        <div class="section-header">
+
+          <div class="small-heading">
+            Support
+          </div>
+
+          <h2 class="section-title">
+            Common reasons to contact.
+          </h2>
+
+          <p class="section-text">
+            TapLock is meant to be simple, but it is still normal to have questions
+            when setting up NFC or using screen time controls.
+          </p>
+
+        </div>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-number">
+              1
+            </div>
+
+            <h3>
+              NFC setup help
+            </h3>
+
+            <p>
+              Reach out if you are not sure how to use your NFC card with TapLock
+              or if your card is not being detected correctly.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">
+              2
+            </div>
+
+            <h3>
+              App blocking issues
+            </h3>
+
+            <p>
+              Send an email if selected apps are not locking the way you expected
+              or if something feels wrong during a focus session.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">
+              3
+            </div>
+
+            <h3>
+              General questions
+            </h3>
+
+            <p>
+              You can also email for questions about TapLock, feedback, ideas,
+              or anything that would make the app better.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="message-inner">
+
+        <div class="message-box">
+
+          <div class="small-heading">
+            Email template
+          </div>
+
+          <h2>
+            Not sure what to write?
+          </h2>
+
+          <p>
+            You can copy this basic format and change it based on what you need.
+            It does not need to be perfect. Just explain the issue clearly.
+          </p>
+
+          <div class="template">
+
+            <div class="template-title">
+              Example message
+            </div>
+
+            <p class="template-line">
+              <strong>Hi, I need help with TapLock.</strong>
+            </p>
+
+            <p class="template-line">
+              I am trying to use the app, but I am having an issue with:
+            </p>
+
+            <p class="template-line">
+              [Explain the issue here]
+            </p>
+
+            <p class="template-line">
+              My device is:
+            </p>
+
+            <p class="template-line">
+              [Write your iPhone model here]
+            </p>
+
+            <p class="template-line">
+              Thanks.
+            </p>
+
+          </div>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="mailto:aahish.abbani@icloud.com?subject=TapLock%20Support">
+              Email TapLock Support
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-inner">
+
+        <div class="faq-header">
+          <div class="small-heading">
+            FAQ
+          </div>
+
+          <h2>
+            Before you email.
+          </h2>
+
+          <p>
+            These answers may help if you are trying to understand how TapLock works.
+          </p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <h3>
+              Do I need an NFC card?
+            </h3>
+
+            <p>
+              Yes. TapLock is designed around using an NFC card to start and stop
+              focus sessions.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              Can I ask for help with setup?
+            </h3>
+
+            <p>
+              Yes. Send an email explaining what part of setup is confusing or not
+              working.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              Should I include screenshots?
+            </h3>
+
+            <p>
+              Screenshots are helpful if you are seeing an error, a confusing screen,
+              or something that does not look right.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>
+              Can I send feedback?
+            </h3>
+
+            <p>
+              Yes. Feedback is welcome, especially if there is something that would
+              make TapLock easier to use.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="last-section">
+      <div class="last-inner">
+
+        <h2>
+          Contact TapLock.
+        </h2>
+
+        <p>
+          For help with the app, NFC cards, setup, or anything else related to
+          TapLock, send an email and explain what you need.
+        </p>
+
+        <div class="buttons" style="justify-content: center;">
+          <a class="btn btn-primary" href="mailto:aahish.abbani@icloud.com">
+            aahish.abbani@icloud.com
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-logo">
+          TapLock
+        </div>
+
+        <div class="footer-copy">
+          NFC-powered screen time control.
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
